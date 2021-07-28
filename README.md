@@ -33,3 +33,13 @@ Value *
 ﻿3. NCR Retail Customers get benefit with flexible shopping experience
 
 ﻿4. NCR mobile application will be updated and competitive with other mobile applications available in market﻿
+
+PLEASE FIND 'static/sample' folder here
+https://drive.google.com/drive/folders/1-5P-iMKdDEieWFaTFCNpzA15BIWQu_5n?usp=sharing
+
+MODEL TRAINED IMAGES
+https://drive.google.com/drive/folders/1F-XuBODdoDeM-zuL0TDgSQ3VqRfNyv2-?usp=sharing
+
+MODEL TESTED IMAGES
+https://drive.google.com/drive/folders/1Ppzs4-9iyJta9VxeEXzFfhay1kyQqFt4?usp=sharing
+
