@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="nav">
+<ul>
+ 
+  <li>  <img src="{{url_for('static', filename="pictures/logo.png")}}" width="50px" height="50px" margin="0px"></li>
+  </ul>
+  </div>
+  <br>
+  <br>
+    <div class="container">
+  <form method="POST" enctype="multipart/form-data">
+  <input type="file" id="real-file" hidden="hidden" name="img"/>
+<button type="button" id="custom-button">CHOOSE A FILE</button>
+<span id="custom-text" id="text">No file chosen, yet.</span>
+
+<input type="submit" class="sub">
+<script>
+
+const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+</script>
+</form>
+</div>
+
+<div class="pic">
+  {%if sc1%}
+  <h2 style="color:#ffffff;"> {{text}}</h2>
+  <img src="{{url_for('static', filename=sc1)}}" width="100px" height="100px" style="margin:5px;"><br>
+  {% endif %}
+  </div>
+
+  <div class="out">
+  {%if output%}
+  <h2 style="color:#ffffff;"> {{text2}}</h2>
+
+<div class="row">
+  {%for i in output%}
+  <div class="column">
+    <div class="card" style="margin:5px;">
+  <img src="{{url_for('static', filename=i)}}" width="50%"" id="match">
+  <p><button>Add to Cart</button></p>
+  </div>
+  </div>
+  {% endfor %}
+  </div>
+  {% endif %}
+  </div>
+
+<div>
+  {%if nomatch %}
+  <h2 style="color:##ffffff;"> {{text3}}</h2>
+  <img src="{{url_for('static', filename=nomatch)}}" width="100px" height="100px"><br>
+  {% endif %}
+  </div>
+  <div class="no_pic">
+  {%if text1%}
+  <h2 style="color:#ffffff;"> {{text1}}</h2>
+  {% endif %}
+  </div>
+  <br>
+  <br>
+
+<div class="row">
+{%if val==1%}
+<h1 style="color:#ffffff">Hey!Similar items in offers!!</h1>
+  <div class="column" >
+    <div class="card">
+      <img src="{{url_for('static', filename="samples/apple.jpg")}}" width="50%">
+     
+      <p><button>Add to Cart</button></p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename="samples/apple4.jpg")}}" width="50%">
+      
+      <p><button>Add to Cart</button></p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename="samples/redban.jpg")}}" width="50%">
+     
+      <p><button>Add to Cart</button></p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="{{url_for('static', filename="samples/mango3.jpg")}}" width="50%">
+      <p><button>Add to Cart</button></p>
+    </div>
+  </div>
+{% endif %}
+
+</div>
+{%if val==0%}
+<h1 style='color:#ffffff'>Sorry! No Recommendations for this product </h1>
+{% endif %}
+</body>
+</html>
