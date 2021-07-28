@@ -1,5 +1,5 @@
 # six_minus_one
-
+# Product search and recommendations
 this idea will help in two things
 
 ﻿1. Using NCR mobile application, Customer can browse pictures from mobile gallery or take the picture of product and application can recognize the products and recommend similar products available in store to customer.
